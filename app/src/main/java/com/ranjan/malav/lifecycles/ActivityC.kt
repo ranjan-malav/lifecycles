@@ -22,19 +22,22 @@ class ActivityC : AppCompatActivity() {
 
         binding.tvTitle.text = "ActivityC"
 
-        binding.btn1.text = "ActivityA"
         binding.btn1.setOnClickListener {
-            startActivity(Intent(this, ActivityA::class.java))
+            startActivity(Intent(this, ActivityA::class.java).also {
+                it.flags = Intent.FLAG_ACTIVITY_SINGLE_TOP
+            })
         }
 
-        binding.btn2.text = "ActivityB"
         binding.btn2.setOnClickListener {
-            startActivity(Intent(this, ActivityB::class.java))
+            startActivity(Intent(this, ActivityB::class.java).also {
+                it.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+            })
         }
 
-        binding.btn3.text = "ActivityC"
         binding.btn3.setOnClickListener {
-            startActivity(Intent(this, ActivityC::class.java))
+            startActivity(Intent(this, ActivityC::class.java).also {
+                it.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK
+            })
         }
     }
 
