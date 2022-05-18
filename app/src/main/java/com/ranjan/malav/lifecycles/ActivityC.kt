@@ -3,16 +3,14 @@ package com.ranjan.malav.lifecycles
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.ranjan.malav.lifecycles.databinding.ActivityMainBinding
 import java.text.SimpleDateFormat
 import java.util.*
 
-class MainActivity : AppCompatActivity() {
-    private val TAG = "MainActivity"
+class ActivityC : AppCompatActivity() {
+    private val TAG = "ActivityC"
 
-    private val viewModel: MainViewModel by viewModels()
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,9 +19,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        viewModel.getString().observe(this) {
-
-        }
+        binding.tvTitle.text = "ActivityC"
 
         binding.btn1.text = "ActivityA"
         binding.btn1.setOnClickListener {
