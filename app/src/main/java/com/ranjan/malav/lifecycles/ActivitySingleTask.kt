@@ -1,51 +1,49 @@
 package com.ranjan.malav.lifecycles
 
 import android.content.Intent
-import android.content.Intent.*
 import android.os.Bundle
 import android.util.Log
-import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import com.ranjan.malav.lifecycles.databinding.ActivityMainBinding
+import com.ranjan.malav.lifecycles.databinding.ActivityLaunchModesBinding
 import java.text.SimpleDateFormat
 import java.util.*
 
-class MainActivity : AppCompatActivity() {
-    private val TAG = "MainActivity"
+class ActivitySingleTask : AppCompatActivity() {
+    private val TAG = "ActivitySingleTask"
 
-    private val viewModel: MainViewModel by viewModels()
-    private lateinit var binding: ActivityMainBinding
+    private lateinit var binding: ActivityLaunchModesBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         Log.d(TAG, "LifecycleLogs CREATED TASK ID: $taskId")
         logEvent("onCreate")
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
+        binding = ActivityLaunchModesBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        viewModel.getEvent().observe(this) {
-            it?.let { logEvent(it) }
-        }
+        binding.tvTitle.text = TAG
 
+        binding.btn1.text = "ActivitySingleInstance"
         binding.btn1.setOnClickListener {
-            startActivity(Intent(this, ActivityA::class.java).also {
-                it.flags = FLAG_ACTIVITY_SINGLE_TOP
-            })
+            startActivity(Intent(this, ActivitySingleInstance::class.java))
         }
 
+        binding.btn2.text = "ActivitySingleInstancePerTask"
         binding.btn2.setOnClickListener {
-            startActivity(Intent(this, ActivityB::class.java).also {
-                it.flags = FLAG_ACTIVITY_NEW_TASK
-            })
+            startActivity(Intent(this, ActivitySingleInstancePerTask::class.java))
         }
 
+        binding.btn3.text = "ActivitySingleTask"
         binding.btn3.setOnClickListener {
-            startActivity(Intent(this, ActivityC::class.java).also {
-                it.flags = FLAG_ACTIVITY_CLEAR_TOP or FLAG_ACTIVITY_NEW_TASK
-            })
+            startActivity(Intent(this, ActivitySingleTask::class.java))
         }
 
+        binding.btn4.text = "ActivitySingleTop"
         binding.btn4.setOnClickListener {
+            startActivity(Intent(this, ActivitySingleTop::class.java))
+        }
+
+        binding.btn5.text = "ActivityStandard"
+        binding.btn5.setOnClickListener {
             startActivity(Intent(this, ActivityStandard::class.java))
         }
     }

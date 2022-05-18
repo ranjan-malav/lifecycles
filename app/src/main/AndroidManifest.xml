@@ -21,6 +21,22 @@
         <activity android:name=".ActivityA" />
         <activity android:name=".ActivityB" />
         <activity android:name=".ActivityC" />
+
+        <activity
+            android:name=".ActivitySingleInstance"
+            android:launchMode="singleInstance" />
+        <activity
+            android:name=".ActivitySingleInstancePerTask"
+            android:launchMode="singleInstancePerTask" />
+        <activity
+            android:name=".ActivitySingleTask"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".ActivitySingleTop"
+            android:launchMode="singleTop" />
+        <activity
+            android:name=".ActivityStandard"
+            android:launchMode="standard" />
     </application>
 
 </manifest>
