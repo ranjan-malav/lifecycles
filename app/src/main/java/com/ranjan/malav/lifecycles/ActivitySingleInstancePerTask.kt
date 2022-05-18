@@ -20,7 +20,7 @@ class ActivitySingleInstancePerTask : AppCompatActivity() {
         binding = ActivityLaunchModesBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.tvTitle.text = TAG
+        binding.tvTitle.text = "ActivitySingleInstancePerTask"
 
         binding.btn1.text = "ActivitySingleInstance"
         binding.btn1.setOnClickListener {

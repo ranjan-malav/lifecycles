@@ -24,6 +24,7 @@
         android:layout_marginTop="10dp"
         android:layout_marginEnd="5dp"
         android:text="ActivitySingleInstance"
+        android:textAllCaps="false"
         app:layout_constraintEnd_toStartOf="@id/btn_2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_title" />
@@ -36,6 +37,7 @@
         android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
         android:text="ActivitySingleInstancePerTask"
+        android:textAllCaps="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/btn_1"
         app:layout_constraintTop_toBottomOf="@id/tv_title" />
@@ -48,6 +50,7 @@
         android:layout_marginTop="10dp"
         android:layout_marginEnd="5dp"
         android:text="ActivitySingleTask"
+        android:textAllCaps="false"
         app:layout_constraintEnd_toStartOf="@id/btn_4"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/btn_1" />
@@ -59,6 +62,7 @@
         android:layout_marginStart="5dp"
         android:layout_marginEnd="10dp"
         android:text="ActivitySingleTop"
+        android:textAllCaps="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/btn_3"
         app:layout_constraintTop_toTopOf="@id/btn_3" />
@@ -70,6 +74,7 @@
         android:layout_marginStart="10dp"
         android:layout_marginEnd="5dp"
         android:text="ActivityStandard"
+        android:textAllCaps="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/btn_3" />
