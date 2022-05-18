@@ -16,6 +16,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        Log.d(TAG, "LifecycleLogs CREATED TASK ID: $taskId")
         logEvent("onCreate")
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -64,6 +65,7 @@ class MainActivity : AppCompatActivity() {
     override fun onDestroy() {
         super.onDestroy()
         logEvent("onDestroy")
+        Log.d(TAG, "LifecycleLogs DESTROYED TASK ID: $taskId")
     }
 
     override fun onNewIntent(intent: Intent?) {
