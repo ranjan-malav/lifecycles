@@ -21,8 +21,8 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        viewModel.getString().observe(this) {
-
+        viewModel.getEvent().observe(this) {
+            it?.let { logEvent(it) }
         }
 
         binding.btn1.text = "ActivityA"
@@ -76,9 +76,14 @@ class MainActivity : AppCompatActivity() {
         logEvent("onRestart")
     }
 
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        logEvent("onSaveInstanceState")
+    }
+
     private fun logEvent(event: String) {
         val sdf = SimpleDateFormat("HH:mm:ss.SSS", Locale.ROOT)
-        val log = "$event invoked at ${sdf.format(Date())}"
+        val log = "LifecycleLogs $event invoked at ${sdf.format(Date())}"
         Log.d(TAG, log)
 
         if (::binding.isInitialized) {
